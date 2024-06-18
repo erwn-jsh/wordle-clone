@@ -2,11 +2,10 @@ import React from 'react';
 import Guess from '../Guess';
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
 
-function PrevGuesses({ guesses }) {
+function PrevGuesses({ guesses, answer }) {
   const curNumOfGuesses = guesses.length;
 
   if (curNumOfGuesses === 6) {
-    console.log('Max guess limit');
     guesses.shift();
   }
 
@@ -16,7 +15,7 @@ function PrevGuesses({ guesses }) {
         {guesses.map((guess, index) => {
           return (
             <>
-              <Guess key={`G_${index}`} guess={guess} />
+              <Guess key={`G_${index}`} guess={guess} answer={answer} />
             </>
           );
         })}
