@@ -2,10 +2,7 @@ import React from 'react';
 import { checkGuess } from '../../game-helpers';
 
 function Guess({ guess, answer }) {
-  const indvGuess = guess.split('');
-
   const checkedGuess = checkGuess(guess, answer);
-  console.log(checkedGuess);
 
   return (
     <div>
